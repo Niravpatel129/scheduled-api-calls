@@ -32,6 +32,8 @@ const makeAnApiCall = () => {
   console.log('end of function');
 };
 
+console.log('hour', arg_hour, 'minute', arg_min);
+
 const job = schedule.scheduleJob({ hour: arg_hour, minute: arg_min - 1, second: 40 }, function () {
   console.log('hello');
   makeAnApiCall();
