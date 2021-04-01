@@ -21,6 +21,7 @@ const makeAnApiCall = () => {
     const date = new Date();
     const hour = date.getHours() + 1;
     const min = date.getMinutes();
+    const sec = date.getSeconds();
     counter += 1;
 
     console.log(
@@ -34,11 +35,11 @@ const makeAnApiCall = () => {
       arg_min,
     );
 
-    if (date.getMinutes() > arg_min) {
+    if (min > arg_min && sec > 30) {
       clearInterval(timerId);
       console.log('ran this exactly:', counter);
     }
-  }, 3000);
+  }, 2000);
 
   console.log('end of function');
 };
