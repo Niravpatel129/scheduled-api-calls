@@ -1,9 +1,18 @@
 const schedule = require('node-schedule');
+let rule = new schedule.RecurrenceRule();
 
-const arg_hour = 9;
-const arg_min = 16;
+const arg_hour = 5;
+const arg_min = 38;
 
-console.log('initialized', new Date());
+// your timezone
+rule.tz = 'Canada/Eastern';
+
+// runs at 15:00:00
+rule.second = 0;
+rule.minute = arg_min - 1;
+rule.hour = arg_hour;
+
+console.log('initialized', rule);
 
 const makeAnApiCall = () => {
   console.log('called function');
@@ -32,9 +41,7 @@ const makeAnApiCall = () => {
   console.log('end of function');
 };
 
-console.log('hour', arg_hour, 'minute', arg_min);
-
-const job = schedule.scheduleJob({ hour: arg_hour, minute: arg_min - 1, second: 40 }, function () {
+const job = schedule.scheduleJob(rule, function () {
   console.log('hello');
   makeAnApiCall();
 
