@@ -3,6 +3,8 @@ const schedule = require('node-schedule');
 const arg_hour = 4;
 const arg_min = 00;
 
+console.log('initialized');
+
 const makeAnApiCall = () => {
   console.log('called function');
   let counter = 0;
