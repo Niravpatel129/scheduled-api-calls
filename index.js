@@ -2,7 +2,7 @@ const schedule = require('node-schedule');
 let rule = new schedule.RecurrenceRule();
 
 const arg_hour = 5;
-const arg_min = 41;
+const arg_min = 48;
 
 // your timezone
 rule.tz = 'Canada/Eastern';
