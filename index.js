@@ -1,14 +1,14 @@
 const schedule = require('node-schedule');
 let rule = new schedule.RecurrenceRule();
 
-const arg_hour = 5;
-const arg_min = 48;
+const arg_hour = 7;
+const arg_min = 15;
 
 // your timezone
 rule.tz = 'Canada/Eastern';
 
 // runs at 15:00:00
-rule.second = 0;
+rule.second = 40;
 rule.minute = arg_min - 1;
 rule.hour = arg_hour;
 
@@ -19,15 +19,17 @@ const makeAnApiCall = () => {
   let counter = 0;
   let timerId = setInterval(() => {
     const date = new Date();
+    const hour = date.getHours() + 1;
+    const min = date.getMinutes();
     counter += 1;
 
     console.log(
       'current_hour',
-      date.getHours(),
+      hour,
       'arg_hour',
       arg_hour,
       'current_minutes',
-      date.getMinutes(),
+      min,
       'arg_min',
       arg_min,
     );
