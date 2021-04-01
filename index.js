@@ -1,7 +1,7 @@
 const schedule = require('node-schedule');
 
 const arg_hour = 4;
-const arg_min = 00;
+const arg_min = 4;
 
 console.log('initialized');
 
